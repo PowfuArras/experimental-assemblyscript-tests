@@ -1,0 +1,33 @@
+{
+  "name": "experimental-assemblyscript-tests",
+  "version": "1.0.0",
+  "description": "Learning AssemblyScript!",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PowfuArras/experimental-assemblyscript-tests.git"
+  },
+  "author": "PowfuArras",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PowfuArras/experimental-assemblyscript-tests/issues"
+  },
+  "homepage": "https://github.com/PowfuArras/experimental-assemblyscript-tests#readme",
+  "devDependencies": {
+    "assemblyscript": "^0.26.7"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}
